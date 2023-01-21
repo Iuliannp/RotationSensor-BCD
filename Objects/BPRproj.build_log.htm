@@ -1,0 +1,196 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: iulian popa, mta, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  D:\ARM KEIL\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      CMSIS_AGDI.dll V1.33.12.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+D:\Anul 4\Semestrul 1\Microprocesoare\ProiectDoneDone\BPRproj.uvprojx
+Project File Date:  12/21/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'D:\ARM KEIL\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+main.c(2): warning: In file included from...
+./Uart.h(3): warning: // comments are not allowed in this language [-Wcomment]
+void UART0_Transmit(uint8_t data); // Functie folostia pentru a trimite un octet catre interfata UART
+                                   ^
+./Uart.h(6): warning: no newline at end of file [-Wnewline-eof]
+void UART0_IRQHandler(void); // Handler-ul de intreruperi
+                                                         ^
+main.c(3): warning: In file included from...
+./gpio.h(4): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void LED_closeAll();
+                 ^
+                  void
+main.c(7): warning: implicit declaration of function 'UART0_Init' [-Wimplicit-function-declaration]
+        UART0_Init(115200);
+        ^
+4 warnings generated.
+compiling main.c...
+Uart.c(1): warning: In file included from...
+./Uart.h(3): warning: // comments are not allowed in this language [-Wcomment]
+void UART0_Transmit(uint8_t data); // Functie folostia pentru a trimite un octet catre interfata UART
+                                   ^
+./Uart.h(6): warning: no newline at end of file [-Wnewline-eof]
+void UART0_IRQHandler(void); // Handler-ul de intreruperi
+                                                         ^
+Uart.c(7): warning: // comments are not allowed in this language [-Wcomment]
+        //Punem in asteptare pana cand registrul de transmisie a datelor nu este gol
+        ^
+Uart.c(8): warning: while loop has empty body [-Wempty-body]
+        while(!(UART0->S1 & UART0_S1_TDRE_MASK));
+                                                ^
+Uart.c(8): note: put the semicolon on a separate line to silence this warning
+Uart.c(16): warning: while loop has empty body [-Wempty-body]
+        while(!(UART0->S1 & UART0_S1_RDRF_MASK));
+                                                ^
+Uart.c(16): note: put the semicolon on a separate line to silence this warning
+Uart.c(46): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint32_t osr = 15; // Over-Sampling Rate (numarul de esantioane luate per bit-time)
+                 ^
+Uart.c(21): warning: no previous prototype for function 'UART0_Init' [-Wmissing-prototypes]
+void UART0_Init(uint32_t baud_rate)
+     ^
+Uart.c(21): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void UART0_Init(uint32_t baud_rate)
+^
+static 
+Uart.c(82): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+Uart.c(3): warning: no previous extern declaration for non-static variable 'c' [-Wmissing-variable-declarations]
+char c;
+     ^
+Uart.c(3): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char c;
+^
+9 warnings generated.
+compiling Uart.c...
+compiling system_MKL25Z4.c...
+assembling startup_MKL25Z4.s...
+Adc.c(2): warning: In file included from...
+./Uart.h(3): warning: // comments are not allowed in this language [-Wcomment]
+void UART0_Transmit(uint8_t data); // Functie folostia pentru a trimite un octet catre interfata UART
+                                   ^
+./Uart.h(6): warning: no newline at end of file [-Wnewline-eof]
+void UART0_IRQHandler(void); // Handler-ul de intreruperi
+                                                         ^
+Adc.c(3): warning: In file included from...
+./gpio.h(4): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void LED_closeAll();
+                 ^
+                  void
+Adc.c(5): warning: // comments are not allowed in this language [-Wcomment]
+#define ADC_CHANNEL (15) // PORT C PIN 1
+                         ^
+Adc.c(67): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint16_t calibration_var = 0x0000;
+                 ^
+Adc.c(156): warning: variable 'ok_3' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_3 = 0;
+                ^
+Adc.c(153): warning: variable 'ok_0' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_0 = 0;
+                ^
+Adc.c(155): warning: variable 'ok_2' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_2 = 0;
+                ^
+Adc.c(160): warning: variable 'ok_7' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_7 = 0;
+                ^
+Adc.c(158): warning: variable 'ok_5' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_5 = 0;
+                ^
+Adc.c(157): warning: variable 'ok_4' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_4 = 0;
+                ^
+Adc.c(162): warning: variable 'ok_9' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_9 = 0;
+                ^
+Adc.c(147): warning: unused variable 'parte_zecimala' [-Wunused-variable]
+        uint8_t parte_zecimala = (uint8_t) measured_voltage;
+                ^
+Adc.c(154): warning: variable 'ok_1' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_1 = 0;
+                ^
+Adc.c(161): warning: variable 'ok_8' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_8 = 0;
+                ^
+Adc.c(159): warning: variable 'ok_6' set but not used [-Wunused-but-set-variable]
+        uint8_t ok_6 = 0;
+                ^
+16 warnings generated.
+compiling Adc.c...
+gpio.c(1): warning: In file included from...
+./gpio.h(4): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void LED_closeAll();
+                 ^
+                  void
+gpio.c(2): warning: // comments are not allowed in this language [-Wcomment]
+#define LED_1 (0) // Segmentul de sus cu PTA1 //PTB0
+                  ^
+gpio.c(289): warning: no previous prototype for function 'LED_closeAll' [-Wmissing-prototypes]
+void LED_closeAll() {
+     ^
+./gpio.h(4): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void LED_closeAll();
+     ^
+                  void
+gpio.c(289): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void LED_closeAll() {
+                 ^
+4 warnings generated.
+compiling gpio.c...
+linking...
+Program Size: Code=5588 RO-data=272 RW-data=0 ZI-data=360  
+".\Objects\BPRproj.axf" - 0 Error(s), 33 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.Kinetis_KLxx_DFP.1.15.0.pack
+                Keil.Kinetis_KLxx_DFP.1.15.0
+                NXP Kinetis KLxx Series Device Support and Examples
+   * Component: Startup Version: 2.5.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/MKL25Z128xxx4
+  ./RTE/_Target_1
+  D:/ARM KEIL/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  D:/ARM KEIL/Packs/Keil/Kinetis_KLxx_DFP/1.15.0/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:2.5.0
+      Include file:  Device/Source/system_MKL25Z4.h
+      Source file:   Device/Source/system_MKL25Z4.c
+      Source file:   Device/Source/ARM/startup_MKL25Z4.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
